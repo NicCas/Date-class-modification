@@ -2,6 +2,29 @@
 
 using namespace std;
 
+class Date{
+    int month;
+    int date;
+    int year;
+
+    string months [12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+public:
+    Date (int m, int d, int y){
+        month = m;
+        date = d;
+        year = y;
+    }
+    void printNumber(){
+        cout << month << "/" << date << "/" << year << endl;
+    }
+    void printMonthFirst () {
+        cout << months[month - 1] << " " << date << ", " << year << endl;
+    }
+    void printDayFirst () {
+        cout << date << " " << months[month - 1] << " " << year << endl;
+    }
+};
+
 int main() {
     // Chapter 14 pg 887 #8
     /*
@@ -54,5 +77,12 @@ int main() {
      * should not be accepted.
      *
      */
+
+    Date christmas = Date (12, 24, 2000);
+
+    christmas.printNumber();
+    christmas.printMonthFirst();
+    christmas.printDayFirst ();
+
     return 0;
 }
