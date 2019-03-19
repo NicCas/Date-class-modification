@@ -42,8 +42,7 @@ int main() {
      *      for the month greater than 12 or less than 1.
      * )
      *
-     * The new version should have the following
-     * overloaded operators:
+     * The new version should have the following overloaded operators:
      *
      *      ++  Prefix and postfix increment operators. These operators should increment the object's day member.
      *
@@ -77,12 +76,28 @@ int main() {
      * should not be accepted.
      *
      */
+    int month = -1;
+    int date = -1;
+    int year = -1;
 
-    Date christmas = Date (12, 24, 2000);
+    while (month < 0 || month > 12){
+        cout << "Please enter a month as a number:" << endl;
+        cin >> month;
+    }
 
-    christmas.printNumber();
-    christmas.printMonthFirst();
-    christmas.printDayFirst ();
+    while (date < 0 || date > 32){
+        cout << "Please enter a date:" << endl;
+        cin >> date;
+    }
+
+    cout << "Please enter a year:" << endl;
+    cin >> year;
+
+    Date day = Date (month, date, year);
+
+    day.printNumber();
+    day.printMonthFirst();
+    day.printDayFirst ();
 
     return 0;
 }
